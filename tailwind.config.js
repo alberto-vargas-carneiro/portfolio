@@ -10,6 +10,8 @@ module.exports = {
       },
       colors: {
         headerColor: "hsl(271, 58%, 18%)",
+        whats: "rgb(37, 211, 102)",
+        linkedin: "rgb(0, 119, 181)",
       },
     },
   },
