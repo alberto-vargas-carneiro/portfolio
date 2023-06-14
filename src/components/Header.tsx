@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Tema } from "./Tema";
 import { useState, useEffect, useRef } from "react";
 import { FiMoon, FiSun } from "react-icons/fi";
 import { IoApps } from "react-icons/io5";
@@ -7,6 +8,7 @@ import { FaTimes } from "react-icons/fa";
 export default function Header() {
   const [showMenu, setShowMenu] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const { darkMode, darkModeOn, lightMode } = useContext(Tema);
   const menuRef = useRef<HTMLDivElement>(null);
 
   const toggleMenu = () => {
@@ -46,9 +48,8 @@ export default function Header() {
   return (
     <header
       className={`sticky top-0 h-[57px] flex justify-between items-center
-     bg-headerColor text-white font-bold px-4 py-4 z-50 transition-all duration-700
-    ${isScrolled ? "rounded-b-3xl" : ""}`}
-    >
+      text-white font-bold px-4 py-4 transition-all duration-700 z-10 lg:px-20
+    ${isScrolled ? "rounded-b-3xl" : ""} bg-headerColor`}>
       <a href="#home">
         <svg
           width="122"
@@ -65,27 +66,27 @@ export default function Header() {
       </a>
       <nav
         ref={menuRef}
-        className={`flex fixed rounded-b-3xl left-0
-      bg-headerColor transition-all duration-500 z-10
-      ${showMenu ? "top-0" : "-top-full"}`}
+        className={`fixed rounded-b-3xl left-0 w-full
+      bg-headerColor transition-all duration-700 z-10
+      ${showMenu ? "top-0" : "-top-full"} lg:static lg:rounded-none lg:bg-transparent lg:top-0 lg:flex lg:justify-center lg:items-center lg:-translate-x-8`}
       >
         <FaTimes
-          className={`cursor-pointer text-lg absolute top-5 right-4 z-10`}
+          className={`cursor-pointer text-lg absolute top-5 right-4 z-10 lg:hidden`}
           onClick={toggleMenu}
         ></FaTimes>
-        <ul className="flex justify-center gap-10 text-lg p-10 w-screen">
+        <ul className="flex justify-center gap-10 text-lg p-10 lg:gap-20">
           <li>
-            <a href="#about" onClick={toggleMenu}>
+            <a href="#about" onClick={toggleMenu} className="hover-underline-animation">
               Sobre
             </a>
           </li>
           <li>
-            <a href="#project" onClick={toggleMenu}>
+            <a href="#project" onClick={toggleMenu} className="hover-underline-animation">
               Projetos
             </a>
           </li>
           <li>
-            <a href="#contact" onClick={toggleMenu}>
+            <a href="#contact" onClick={toggleMenu} className="hover-underline-animation">
               Contato
             </a>
           </li>
@@ -95,6 +96,7 @@ export default function Header() {
         <FiSun
           className={`cursor-pointer transition-opacity duration-500
           ${showMenu ? "opacity-0" : "opacity-100"}`}
+          onClick={lightMode}
         />
 
         <span
@@ -103,13 +105,12 @@ export default function Header() {
         ></span>
 
         <FiMoon
-          className={`cursor-pointer transition-opacity duration-500
+          onClick={darkModeOn} className={`cursor-pointer transition-opacity duration-500
           ${showMenu ? "opacity-0" : "opacity-100"}`}
         />
 
         <IoApps
-          className={`ml-5 cursor-pointer z-0 transition-opacity duration-500
-          ${showMenu ? "opacity-0" : "opacity-100"}`}
+          className={`ml-5 cursor-pointer z-0 transition-opacity duration-500 ${showMenu ? "opacity-0" : "opacity-100"} lg:hidden`}
           onClick={toggleMenu}
         ></IoApps>
       </div>
