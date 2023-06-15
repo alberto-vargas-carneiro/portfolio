@@ -9,7 +9,7 @@ import { Tema } from "@/components/Tema";
 
 export default function Home() {
 
-  const { darkMode, darkModeOn, lightMode } = useContext(Tema);
+  const { darkMode } = useContext(Tema);
 
   return (
     <div id="home" className={`${darkMode ? "bg-[#2c2135]" : ""}`}>
