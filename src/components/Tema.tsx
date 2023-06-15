@@ -8,10 +8,17 @@ export const Tema = createContext({
   darkMode: false,
   darkModeOn: () => {},
   lightMode: () => {},
+  english: false,
+  changeLanguage: () => {},
 });
 
 export const ThemeProvider = ({ children }: ThemeProviderProps) => {
   const [darkMode, setDarkMode] = useState(false);
+  const [english, setEnglish] = useState(false);
+
+  const changeLanguage = () => {
+    setEnglish(!english);
+  };
 
   const darkModeOn = () => {
     setDarkMode(true);
@@ -22,7 +29,7 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
     };
 
   return (
-    <Tema.Provider value={{ darkMode, darkModeOn, lightMode }}>
+    <Tema.Provider value={{ darkMode, darkModeOn, lightMode, english, changeLanguage }}>
       {children}
     </Tema.Provider>
   );

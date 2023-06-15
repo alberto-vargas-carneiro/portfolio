@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* create a scrollbar with the headerColor defined in tailwind.config.js */
 ::-webkit-scrollbar-thumb {
   background-color: hsl(271, 58%, 18%);
   border-radius: 0.5rem;

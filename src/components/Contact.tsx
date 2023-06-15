@@ -8,14 +8,25 @@ import { useContext } from "react";
 import { Tema } from "./Tema";
 
 export default function Contact() {
-  const { darkMode, darkModeOn, lightMode } = useContext(Tema);
+  const { darkMode, english } = useContext(Tema);
   return (
     <div id="contact" className={`max-[375px]:mx-8 mx-[50px] pt-[70px] ${darkMode ? "text-white" : ""} `}>
-      <Chapter>Contato</Chapter>
-      <div className="md:flex md:justify-around lg:mb-14">
+
+      {!english && (
+        <Chapter>Contato</Chapter>
+      )}
+      {english && (
+        <Chapter>Contact</Chapter>
+      )}
+      <div className="md:flex md:justify-around lg:mb-14 min-[700px]:mb-6">
         <div className="flex gap-4 mb-3 min-[700px]:text-[22px]">
           <SlPhone className="text-2xl min-[700px]:text-[30px]"></SlPhone>
-          <span>(51) 981530409</span>
+          {!english && (
+            <span>(51) 981530409</span>
+          )}
+          {english && (
+            <span>+55 51 981530409</span>
+          )}
         </div>
 
         <div className="flex gap-4 mb-3 min-[700px]:text-[22px]">
@@ -24,7 +35,7 @@ export default function Contact() {
         </div>
       </div>
 
-      <div className="lg:flex lg:justify-around lg:mb-14">
+      <div className="lg:flex lg:justify-around lg:mb-14 min-[700px]:mb-10">
         <div className="flex max-[1023px]:justify-around mb-3 lg:justify-around lg:w-1/2">
           <a href="https://wa.me/5551981530409" target="_blank" rel="noopener noreferrer" className="flex">
             <div className="bg-whats rounded-xl flex p-2 border border-black text-white">
@@ -39,11 +50,20 @@ export default function Contact() {
         </div>
 
         <div className="flex max-[1023px]:justify-around mb-3 lg:justify-around lg:h-fit lg:w-1/2">
-          <a href="/cv1.pdf" download="Alberto Vargas Carneiro">
-            <div className="bg-purple-700 rounded-xl flex p-2 border border-black text-white">
-              <span>Baixar currículo</span>
-            </div>
-          </a>
+          {!english && (
+            <a href="/cv.pdf" download="Alberto Vargas Carneiro">
+              <div className="bg-purple-700 rounded-xl flex p-2 border border-black text-white">
+                <span>Baixar currículo</span>
+              </div>
+            </a>
+          )}
+          {english && (
+            <a href="/cvEng.pdf" download="Alberto Vargas Carneiro English">
+              <div className="bg-purple-700 rounded-xl flex p-2 border border-black text-white">
+                <span>Download CV</span>
+              </div>
+            </a>
+          )}
           <a
             href="https://www.linkedin.com/in/alberto-vargas-carneiro/" target="_blank"
             className="flex justify-center items-center"

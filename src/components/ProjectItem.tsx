@@ -16,7 +16,6 @@ interface ProjectItemProps {
   desc3?: string;
   desc4?: string;
   desc5?: string;
-  children?: any;
 }
 
 export default function ProjectItem(props: ProjectItemProps) {
