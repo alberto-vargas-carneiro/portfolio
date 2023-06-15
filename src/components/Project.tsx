@@ -1,5 +1,5 @@
 import ProjectItem from "./ProjectItem";
-import portfolio from "../assets/imgs/Sem título.png";
+import portfolio from "../assets/imgs/home.png";
 import kbca from "../assets/imgs/kbca.png";
 import alexa from "../assets/imgs/alexa.png";
 import Chapter from "./Chapter";

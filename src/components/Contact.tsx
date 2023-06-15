@@ -51,14 +51,14 @@ export default function Contact() {
 
         <div className="flex max-[1023px]:justify-around mb-3 lg:justify-around lg:h-fit lg:w-1/2">
           {!english && (
-            <a href="/cv.pdf" download="Alberto Vargas Carneiro">
+            <a href="/Alberto Vargas Carneiro.pdf" download="Alberto Vargas Carneiro">
               <div className="bg-purple-700 rounded-xl flex p-2 border border-black text-white">
                 <span>Baixar currículo</span>
               </div>
             </a>
           )}
           {english && (
-            <a href="/cvEng.pdf" download="Alberto Vargas Carneiro English">
+            <a href="/Alberto Vargas Carneiro English.pdf" download="Alberto Vargas Carneiro English">
               <div className="bg-purple-700 rounded-xl flex p-2 border border-black text-white">
                 <span>Download CV</span>
               </div>
