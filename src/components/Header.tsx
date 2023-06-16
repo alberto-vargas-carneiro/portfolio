@@ -133,13 +133,13 @@ export default function Header() {
 
         {!english && (
           <button onClick={changeLanguage}
-            className="absolute top-16 right-0 p-1 rounded-l-lg text-sm font-normal bg-headerColor lg:static lg:pl-6 lg:whitespace-nowrap hover:underline">
+            className="absolute top-16 right-0 p-1 rounded-l-lg text-sm font-normal bg-headerColor lg:static lg:pl-6 lg:whitespace-nowrap lg:w-16 hover:underline">
             PT-BR
           </button>
         )}
         {english && (
           <button onClick={changeLanguage}
-            className="absolute top-16 right-0 p-1 rounded-l-lg text-sm font-normal bg-headerColor lg:static lg:pl-6 lg:whitespace-nowrap hover:underline">
+            className="absolute top-16 right-0 p-1 rounded-l-lg text-sm font-normal bg-headerColor lg:static lg:pl-6 lg:whitespace-nowrap lg:w-16 hover:underline">
             ENG
           </button>
         )}
