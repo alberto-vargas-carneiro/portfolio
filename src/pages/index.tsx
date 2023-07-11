@@ -6,6 +6,7 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import { useContext } from "react";
 import { Tema } from "@/components/Tema";
+import Head from "next/head";
 
 export default function Home() {
 
@@ -13,6 +14,11 @@ export default function Home() {
 
   return (
     <div id="home" className={`${darkMode ? "bg-[#2c2135]" : ""}`}>
+      <Head>
+        <title>Alberto Vargas Carneiro</title>
+        <meta name="description" content="Portfólio de Alberto Vargas Carneiro" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
       <Header></Header>
       <Land></Land>
       <About></About>
