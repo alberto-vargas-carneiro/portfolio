@@ -6,7 +6,7 @@ export default function About() {
   const { darkMode, darkModeOn, lightMode, english, changeLanguage } = useContext(Tema);
 
   return (
-    <div id="about" className={`mx-[50px] pt-[70px] ${darkMode ? "bg-[#2c2135] text-white" : ""} lg:px-28 xl:px-48`}>
+    <div id="about" className={`mx-[50px] pt-[70px] ${darkMode ? "bg-[#2c2135] text-white" : ""} lg:px-28 xl:px-56`}>
       {!english && (
         <>
           <Chapter>Sobre</Chapter>

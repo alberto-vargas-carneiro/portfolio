@@ -6,7 +6,7 @@ export default function Land() {
   return (
     <div className="bg-[url('/IT.jpg')] bg-cover flex flex-col lg:h-[calc(100vh-57px)]">
       <div className="h-[58px] w-full bg-headerColor absolute -translate-y-[57px] -z-10"></div>
-      <div className={`flex flex-col text-white px-6 pt-[26px] mb-10 text-justify min-[700px]:mx-14 lg:px-28 xl:px-48 xl:pt-20`}>
+      <div className={`flex flex-col text-white px-6 pt-[26px] mb-10 text-justify min-[700px]:mx-14 lg:px-28 xl:px-56 xl:pt-20`}>
         {!english && (
           <>
             <p className="max-[386px]:text-center text-[28px] self-center min-[700px]:text-[40px] lg:pt-10 lg:text-5xl">Olá, me chamo Alberto</p>
@@ -33,7 +33,6 @@ export default function Land() {
         )}
         {english && (
           <>
-            {/* translate all p elements above into english */}
             <p className="max-[386px]:text-center text-[28px] self-center min-[700px]:text-[40px] lg:pt-10 lg:text-5xl">Hello, my name is Alberto</p>
             <p className="max-[386px]:text-center text-[20px] self-center pt-3 pb-8 min-[400px]:pb-16 min-[500px]:pb-[70px] min-[700px]:text-[30px] lg:pt-7 lg:pb-16 xl:pt-12 xl:pb-36">
               Welcome to my portfolio

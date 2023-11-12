@@ -4,24 +4,17 @@ import { useState } from "react";
 import { Tema } from "./Tema";
 
 interface ProjectItemProps {
-  id: string;
   src: any;
   alt: string;
-  link: string;
-  tag: string;
-  tag2: string;
-  tag3: string;
+  site: any;
+  repositorio: any;
+  tag: string[];
   desc: string;
-  desc2?: string;
-  desc3?: string;
-  desc4?: string;
-  desc5?: string;
 }
 
 export default function ProjectItem(props: ProjectItemProps) {
   const [isHovered, setIsHovered] = useState(false);
-  const [isExpanded, setIsExpanded] = useState(false);
-  const { darkMode, darkModeOn, lightMode } = useContext(Tema);
+  const { darkMode } = useContext(Tema);
 
   const handleMouseEnter = () => {
     setIsHovered(true);
@@ -31,37 +24,6 @@ export default function ProjectItem(props: ProjectItemProps) {
     setIsHovered(false);
   };
 
-  const toggleDescription = () => {
-    setIsExpanded(!isExpanded);
-  };
-
-  const descriptionText = props.desc;
-
-  const truncatedText = isExpanded
-    ? descriptionText
-    : descriptionText.slice(0, 200) + "...";
-
-  const desc2 = () => {
-    if (isExpanded && props.desc2 !== undefined) {
-      return <p className="px-2 min-[700px]:text-[23px] md:text-[18px] pt-2 text-justify">{props.desc2}</p>;
-    }
-  };
-  const desc3 = () => {
-    if (isExpanded && props.desc3 !== undefined) {
-      return <p className="px-2 min-[700px]:text-[23px] md:text-[18px] pt-2 text-justify">{props.desc3}</p>;
-    }
-  };
-  const desc4 = () => {
-    if (isExpanded && props.desc4 !== undefined) {
-      return <p className="px-2 min-[700px]:text-[23px] md:text-[18px] pt-2 text-justify">{props.desc4}</p>;
-    }
-  };
-  const desc5 = () => {
-    if (isExpanded && props.desc5 !== undefined) {
-      return <p className="px-2 min-[700px]:text-[23px] md:text-[18px] pt-2 text-justify">{props.desc5}</p>;
-    }
-  };
-
   return (
     <div
       onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}
@@ -69,35 +31,20 @@ export default function ProjectItem(props: ProjectItemProps) {
       ${isHovered ? "shadow shadow-purple-700" : darkMode ? "shadow-[0_1px_10px_0px_rgba(255,255,255,0.1)]"
           : "shadow-[0_1px_10px_0px_rgba(0,0,0,0.1)]"}`}>
 
-      <a href={props.link} target="_blank">
-        <Image src={props.src} alt={props.alt} className="w-full rounded-lg border" />
-      </a>
+      <Image src={props.src} alt={props.alt} className="w-full rounded-lg border mb-2" />
 
-      <div className={`flex gap-1 absolute -translate-y-8 translate-x-1 transition-opacity duration-500
-      ${isHovered ? "opacity-100" : "opacity-0"}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-        <span className="rounded-lg p-1 bg-purple-500 text-white text-sm">{props.tag}</span>
-        <span className="rounded-lg p-1 bg-purple-500 text-white text-sm">{props.tag2}</span>
-        <span className="rounded-lg p-1 bg-purple-500 text-white text-sm">{props.tag3}</span>
+      <div className={`flex gap-1 absolute -translate-y-10 translate-x-1 transition-opacity duration-500
+      ${isHovered ? "opacity-100" : "opacity-0"}`}>
+        {props.tag && (
+          props.tag.map((tag, i) => (
+            <span key={i} className="rounded-lg p-1 bg-purple-500 text-white text-sm">{tag}</span>
+          ))
+        )}
       </div>
 
-      <p className="pt-5 px-2 min-[700px]:text-[23px] md:text-[18px] text-justify">{truncatedText}</p>
-
-      {desc2()}
-      {desc3()}
-      {desc4()}
-      {desc5()}
-
-      {!isExpanded && (
-        <button onClick={toggleDescription} className={`px-2 ${darkMode ? "text-[#a855f7]" : "text-purple-700"} text-sm min-[700px]:text-[20px] hover:underline`}>
-          Read more
-        </button>
-      )}
-
-      {isExpanded && (
-        <button onClick={toggleDescription} className={`px-2 ${darkMode ? "text-[#a855f7]" : "text-purple-700"} text-sm min-[700px]:text-[20px] hover:underline`}>
-          Read less
-        </button>
-      )}
+      {props.desc} <br />
+      <a href={props.site} className={'inline-block p-1 mt-2 mr-2 text-purple-600 border-purple-600 border rounded-lg hover:bg-purple-600 hover:text-white'} target="_blank">Visitar</a>
+      <a href={props.repositorio} className={'p-1 border border-gray-900 rounded-lg hover:text-white hover:bg-gray-900'} target="_blank">Repositório</a>
     </div>
   );
 }

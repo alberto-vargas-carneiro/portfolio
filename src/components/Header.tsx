@@ -48,7 +48,7 @@ export default function Header() {
   return (
     <header
       className={`sticky top-0 h-[57px] flex justify-between items-center
-      text-white font-bold px-4 py-4 transition-all duration-700 z-10 lg:px-20
+      text-white font-bold px-4 py-4 transition-all duration-700 z-10 lg:px-24
     ${isScrolled ? "rounded-b-3xl" : ""} bg-headerColor`}>
       <a href="#home">
         <svg width="122" height="25" viewBox="0 0 122 25" fill="none" xmlns="http://www.w3.org/2000/svg">

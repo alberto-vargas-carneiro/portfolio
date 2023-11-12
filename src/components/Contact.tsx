@@ -10,7 +10,7 @@ import { Tema } from "./Tema";
 export default function Contact() {
   const { darkMode, english } = useContext(Tema);
   return (
-    <div id="contact" className={`max-[375px]:mx-8 mx-[50px] pt-[70px] ${darkMode ? "text-white" : ""} `}>
+    <div id="contact" className={`max-[375px]:mx-8 mx-[50px] xl:px-56 pt-[70px] ${darkMode ? "text-white" : ""} `}>
 
       {!english && (
         <Chapter>Contato</Chapter>
