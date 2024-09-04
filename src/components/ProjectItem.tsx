@@ -6,7 +6,7 @@ import { Tema } from "./Tema";
 interface ProjectItemProps {
   src: any;
   alt: string;
-  site: any;
+  site?: any;
   repositorio: any;
   tag: string[];
   desc: string;

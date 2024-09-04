@@ -34,14 +34,18 @@ export default function Project() {
           {repos.map((repo: { description: string, topics: any[], homepage: any, name: string, html_url: any }, i) => {
             const { description, topics, homepage, name, html_url } = repo;
             const topicos = topics.filter((topic: any) => topic !== "portfolio").map((e) => e.slice(0, 1).toUpperCase() + e.slice(1));
+            const isSpecial = name === 'to-do-list'
 
             return (
               <>
-                <ProjectItem key={repos[i]} src={imgs[i]} alt={name} site={homepage} repositorio={html_url} tag={topicos} desc={description} />
+                {isSpecial ? (
+                  <ProjectItem key={repos[i]} src={imgs[i]} alt={name} repositorio={html_url} tag={topicos} desc={description} />
+                ) : (
+                  <ProjectItem key={repos[i]} src={imgs[i]} alt={name} site={homepage} repositorio={html_url} tag={topicos} desc={description} />
+                )}
               </>
             )
-          })
-          }
+          })}
         </div>
       </>
     </div>
