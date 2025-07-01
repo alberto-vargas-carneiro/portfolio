@@ -43,8 +43,7 @@ export default function ProjectItem(props: ProjectItemProps) {
       </div>
 
       {props.desc} <br />
-      <a href={props.site} className={'inline-block p-1 mt-2 mr-2 text-purple-600 border-purple-600 border rounded-lg hover:bg-purple-600 hover:text-white'} target="_blank">Visitar</a>
-      <a href={props.repositorio} className={'p-1 border border-gray-900 rounded-lg hover:text-white hover:bg-gray-900'} target="_blank">Repositório</a>
+      <a href={props.repositorio} className={'inline-block p-1 mt-2 border border-gray-900 rounded-lg hover:text-white hover:bg-gray-900'} target="_blank">Repositório</a>
     </div>
   );
 }

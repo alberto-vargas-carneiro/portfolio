@@ -18,18 +18,8 @@ export default function Contact() {
       {english && (
         <Chapter>Contact</Chapter>
       )}
-      <div className="md:flex md:justify-around lg:mb-14 min-[700px]:mb-6">
-        <div className="flex gap-4 mb-3 min-[700px]:text-[22px]">
-          <SlPhone className="text-2xl min-[700px]:text-[30px]"></SlPhone>
-          {!english && (
-            <span>(51) 981530409</span>
-          )}
-          {english && (
-            <span>+55 51 981530409</span>
-          )}
-        </div>
-
-        <div className="flex gap-4 mb-3 min-[700px]:text-[22px]">
+      <div className="flex justify-center lg:mb-14 mb-6">
+        <div className="flex gap-4 mb-3 text-xl">
           <HiOutlineMail className="text-2xl min-[700px]:text-[30px]"></HiOutlineMail>
           <span>carneiroalberto@yahoo.com.br</span>
         </div>

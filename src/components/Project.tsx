@@ -3,6 +3,7 @@ import portfolio from "../assets/imgs/home.png";
 import kbca from "../assets/imgs/kbca.png";
 import alexa from "../assets/imgs/alexa.png";
 import todo from "../assets/imgs/todo.png";
+import workout from "../assets/imgs/workout.png";
 import Chapter from "./Chapter";
 import { useContext, useEffect, useState } from "react";
 import { Tema } from "./Tema";
@@ -11,7 +12,7 @@ import axios from "axios";
 export default function Project() {
   const { darkMode, english } = useContext(Tema);
   const [repos, setRepos] = useState([]);
-  const imgs = [todo, portfolio, alexa, kbca]
+  const imgs = [workout, todo, portfolio, alexa, kbca];
 
   const handleRepos = async () => axios.get(`https://api.github.com/users/alberto-vargas-carneiro/repos`)
     .then(response => {
